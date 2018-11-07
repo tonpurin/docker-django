@@ -1,0 +1,27 @@
+# サービス指定
+version: '3'
+
+# サービス定義
+services:
+  # DB
+  mysql:
+    image: mysql:5.7.22
+    restart: always # 明示的にstopされない限り再起動される
+    environment: # 環境変数の設定 (Djangoのsetting.pyと合わせる)
+    - MYSQL_ROOT_PASSWORD=testApp
+    - MYSQL_DATABASE=testApp
+    - MYSQL_USER=testApp
+    - MYSQL_PASSWORD=testApp
+  # WSGI + Django
+  python:
+    build: python_server # python_severにあるDockerfileをビルドする
+    volumes: # マウントするディレクトリを指定 (ホスト:コンテナ)
+    - .:/server
+    command: ./python_server/entry.sh # コンテナ内で動かすコマンド
+  # Nginx
+  webserver:
+    image: nginx:alpine
+    depends_on: # webserverコンテナを立ち上げる前にpythonコンテナを立ち上げる
+    - python
+
+
