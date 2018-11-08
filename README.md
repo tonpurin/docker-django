@@ -1,4 +1,4 @@
-# AWS × Docker × DjangoでWEBアプリ作成
+# AWS × Docker × DjangoのWEBアプリインフラ
 
 ### 使用する技術
 
@@ -20,10 +20,28 @@
 -----
 
 ### 構成
- 
 
 
 
+
+----
+
+### 実行方法
+
+- ローカル (開発環境)  
+
+```
+	$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml build  
+	$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+```
+
+
+- EC2 (本番環境)
+
+```
+	$ docker-compose -f docker-compose.yml -f docker-compose.product.yml build  
+	$ docker-compose -f docker-compose.yml -f docker-compose.product.yml up
+```
 
 
 ---
@@ -40,11 +58,11 @@
 - Docker
 	- [Docker Composeでコンテナに入る方法](https://qiita.com/setouchi/items/ebfeefb7d5b129002177) 
 	- [Docker Composeでビルドしたイメージ名について](https://amaya382.hatenablog.jp/entry/2017/04/03/034002)
-	- [docker-compose.ymlを上書きする](https://qiita.com/urouro_n/items/6a026eb635cc7d0e034f)
+	- [開発環境と本番環境でdocker-composeを分ける方法](https://qiita.com/urouro_n/items/6a026eb635cc7d0e034f)
 	
 - WSGI
 	- [WSGIとDjangoの関係](http://d.hatena.ne.jp/hirokiky/20121001/1349098637) 
 	- [uwsgi.iniの記述について](https://qiita.com/hogemax/items/a3b04f0e848f52ff888e)
 
 - Django
-	-  
+	- [開発環境と本番環境でsettingを分ける方法](https://qiita.com/okoppe8/items/e60d35f55188c0ab9ecc)
