@@ -1,9 +1,10 @@
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# ドメイン名を入れる
+ALLOWED_HOSTS = ["*"]
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -11,9 +12,9 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.path.join(BASE_DIR, 'testApp'),
-        'USER': 'testApp',
-        'PASSWORD': 'testApp',
+        'NAME': os.path.join(BASE_DIR, 'djangoPJ'),
+        'USER': 'djangoPJ',
+        'PASSWORD': 'djangoPJ',
         'HOST': 'mysql',
         'PORT': '3306',
     }

@@ -55,6 +55,17 @@
 
 ---
 
+### TODO
+
+- AWS
+	- ECSで構築・運用
+		- セキュリティの話とか 
+- Django
+	- DBの確認
+	- 静的ファイルの確認
+
+---
+
 ### 参照
 
 - 全体
@@ -74,4 +85,5 @@
 	- [uwsgi.iniの記述について](https://qiita.com/hogemax/items/a3b04f0e848f52ff888e)
 
 - Django
+	- [EC2でDjangoを動かす](https://qiita.com/kur/items/fb75354ee53671c79614) 
 	- [開発環境と本番環境でsettingを分ける方法](https://qiita.com/okoppe8/items/e60d35f55188c0ab9ecc)

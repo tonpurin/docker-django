@@ -8,10 +8,10 @@ services:
     image: mysql:5.7.22
     restart: always # 明示的にstopされない限り再起動される
     environment: # 環境変数の設定 (Djangoのsetting.pyと合わせる)
-    - MYSQL_ROOT_PASSWORD=testApp
-    - MYSQL_DATABASE=testApp
-    - MYSQL_USER=testApp
-    - MYSQL_PASSWORD=testApp
+    - MYSQL_ROOT_PASSWORD=djangoPJ
+    - MYSQL_DATABASE=djangoPJ
+    - MYSQL_USER=djangoPJ
+    - MYSQL_PASSWORD=djangoPJ
   # WSGI + Django
   python:
     build: python_server # python_severにあるDockerfileをビルドする
