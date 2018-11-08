@@ -1,9 +1,9 @@
-# ECS × Docker × DjangoでWEBアプリ作成
+# AWS × Docker × DjangoでWEBアプリ作成
 
 ### 使用する技術
 
 - AWS
-	- ECS (EC2 Container Service)でEC2上で動くコンテナ管理する
+	- ECS (EC2 Container Service)でコンテナ管理する
 - Docker
 	- 各アプリケーション・ミドルウェアをコンテナ化し、Docker composeで管理する
 - Django
@@ -40,7 +40,11 @@
 - Docker
 	- [Docker Composeでコンテナに入る方法](https://qiita.com/setouchi/items/ebfeefb7d5b129002177) 
 	- [Docker Composeでビルドしたイメージ名について](https://amaya382.hatenablog.jp/entry/2017/04/03/034002)
+	- [docker-compose.ymlを上書きする](https://qiita.com/urouro_n/items/6a026eb635cc7d0e034f)
 	
 - WSGI
 	- [WSGIとDjangoの関係](http://d.hatena.ne.jp/hirokiky/20121001/1349098637) 
 	- [uwsgi.iniの記述について](https://qiita.com/hogemax/items/a3b04f0e848f52ff888e)
+
+- Django
+	-  

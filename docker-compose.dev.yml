@@ -8,6 +8,8 @@ services:
   python:
     expose: # コンテナ間の連携で疎通させるポート
     - "5000"
+    environment: # 環境変数の設定
+    - DJANGO_SETTINGS_MODULE=testApp.settings
   webserver:
     ports: # ホストのポート:コンテナのポート疎通
     - "8000:80"
