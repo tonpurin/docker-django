@@ -1,0 +1,19 @@
+# 本番環境用
+
+# サービス指定
+version: '3'
+
+# サービス定義
+services:
+  python:
+    expose: # コンテナ間の連携で疎通させるポート
+    - "5000"
+    environment: # 環境変数の設定
+    - DJANGO_SETTINGS_MODULE=testApp.settings.product
+  webserver:
+    ports: # ホストのポート:コンテナのポート疎通
+    - "8000:80"
+    volumes:
+    - ./web_server/development.conf:/etc/nginx/conf.d/default.conf
+
+

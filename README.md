@@ -28,20 +28,29 @@
 
 ### 実行方法
 
-- ローカル (開発環境)  
+- ローカル (開発環境)
 
-```
-	$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml build  
-	$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
-```
+	- Docker compose インストール
 
+	- コンテナ生成
+
+	```
+		$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml build  
+		$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+	```
 
 - EC2 (本番環境)
 
-```
-	$ docker-compose -f docker-compose.yml -f docker-compose.product.yml build  
-	$ docker-compose -f docker-compose.yml -f docker-compose.product.yml up
-```
+	- ネットワーク設定
+	
+	- Docker compose インストール
+
+	- コンテナ生成
+
+	```
+		$ docker-compose -f docker-compose.yml -f docker-compose.product.yml build  
+		$ docker-compose -f docker-compose.yml -f docker-compose.product.yml up
+	```
 
 
 ---
