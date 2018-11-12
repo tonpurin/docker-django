@@ -1,9 +1,7 @@
-# AWS × Docker × DjangoのWEBアプリインフラ
+# Docker × DjangoのWEBアプリインフラ
 
 ### 使用する技術
 
-- AWS
-	- ECS (EC2 Container Service)でコンテナ管理する
 - Docker
 	- 各アプリケーション・ミドルウェアをコンテナ化し、Docker composeで管理する
 - Django
@@ -28,40 +26,43 @@
 
 ### 実行方法
 
-- ローカル (開発環境)
+- 開発環境(ローカル)で実行する場合
 
 	- Docker compose インストール
 
-	- コンテナ生成
+	- コンテナ生成・起動
 
 	```
 		$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml build  
 		$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 	```
+	
+	- アクセス (localhost:8000) 
+	
 
-- EC2 (本番環境)
+- 本番環境(EC2)で実行する場合
 
-	- ネットワーク設定
+	- ネットワーク設定 (EC2のport:80を空ける)
 	
 	- Docker compose インストール
 
-	- コンテナ生成
+	- コンテナ生成・起動
 
 	```
 		$ docker-compose -f docker-compose.yml -f docker-compose.product.yml build  
 		$ docker-compose -f docker-compose.yml -f docker-compose.product.yml up
 	```
+	
+	- アクセス (ec2のIP)
 
 
 ---
 
 ### TODO
 
-- AWS
-	- ECSで構築・運用
-		- セキュリティの話とか 
 - Django
 	- DBの確認
+		- Amazon RDSとかと疎通出来るか
 	- 静的ファイルの確認
 
 ---
@@ -70,10 +71,6 @@
 
 - 全体
 	- [docker+nginx+uwsgi+djangoでwebアプリ作成](https://qiita.com/hayatetabata/items/7b51acedeb3d4e84dd12) 
-	
-- AWS
-	- [EC2×dockerでWEBサーバ作成](https://qiita.com/y-do/items/e127211b32296d65803a)
-	- [EKSとECSの違いについて](https://logmi.jp/tech/articles/305690)
 
 - Docker
 	- [Docker Composeでコンテナに入る方法](https://qiita.com/setouchi/items/ebfeefb7d5b129002177) 
