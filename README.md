@@ -26,6 +26,15 @@
 
 ### 実行方法
 
+- ※ DjangoのPJ名を変更したい場合
+	- rename\_djangoPJ.shのnew\_pj\_nameに新しいPJ名を記入
+	- シェルスクリプト実行  
+
+	```
+		$ chmod +x rename_djangoPJ.sh
+		$ ./rename_djangoPJ.sh
+	```
+
 - 開発環境(ローカル)で実行する場合
 
 	- Docker compose インストール
