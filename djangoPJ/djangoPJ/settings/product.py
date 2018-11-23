@@ -12,7 +12,7 @@ ALLOWED_HOSTS = ["*"]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.path.join(BASE_DIR, 'djangoPJ'),
+        'NAME': 'djangoPJ',
         'USER': 'djangoPJ',
         'PASSWORD': 'djangoPJ',
         'HOST': 'mysql',
