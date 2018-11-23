@@ -5,7 +5,7 @@
 - Docker
 	- 各アプリケーション・ミドルウェアをコンテナ化し、Docker composeで管理する
 - Django
-	- PythonでWEBアプリを作成
+	- PythonのWEBアプリケーションフレームワーク
 - Nginx
 	- WEBサーバ構築用のミドルウェア
 - WSGI (Web Server Gateway Interface)

@@ -1,5 +1,5 @@
 # イメージの指定
-FROM python:3.5
+FROM python:3.6
 
 # コンテナにディレクトリ作成
 RUN mkdir /server
