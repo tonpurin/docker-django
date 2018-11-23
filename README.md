@@ -33,6 +33,7 @@
 	- コンテナ生成・起動
 
 	```
+		$ cd docker_infra
 		$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml build  
 		$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 	```
@@ -41,14 +42,16 @@
 	
 
 - 本番環境(EC2)で実行する場合
+	- AWSのインフラ構築	 	
 
-	- ネットワーク設定 (EC2のport:80を空ける)
+		- ネットワーク設定 (EC2のport:80を空ける)
 	
 	- Docker compose インストール
 
 	- コンテナ生成・起動
 
 	```
+		$ cd docker_infra
 		$ docker-compose -f docker-compose.yml -f docker-compose.product.yml build  
 		$ docker-compose -f docker-compose.yml -f docker-compose.product.yml up
 	```

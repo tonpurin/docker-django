@@ -16,8 +16,8 @@ services:
   python:
     build: python_server # python_severにあるDockerfileをビルドする
     volumes: # マウントするディレクトリを指定 (ホスト:コンテナ)
-    - .:/server
-    command: ./python_server/entry.sh # コンテナ内で動かすコマンド
+    - ../:/server
+    command: ./docker_infra/python_server/entry.sh # コンテナ内で動かすコマンド (コンテナ内のパスで指定)
   # Nginx
   webserver:
     image: nginx:alpine

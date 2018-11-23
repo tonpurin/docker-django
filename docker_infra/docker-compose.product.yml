@@ -13,7 +13,7 @@ services:
   webserver:
     ports: # ホストのポート:コンテナのポート疎通
     - "80:80"
-    volumes:
+    volumes: # nginxの設定ファイルをマウント
     - ./web_server/product.conf:/etc/nginx/conf.d/default.conf
 
 
