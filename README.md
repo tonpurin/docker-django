@@ -104,7 +104,6 @@
 	$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml run python python djangoPJ/manage.py migrate --settings=djangoPJ.settings.dev
 	# 本番環境
 	$ docker-compose -f docker-compose.yml -f docker-compose.product.yml run python python djangoPJ/manage.py migrate --settings=djangoPJ.settings.product
-
 ``` 
 ※ docker-compose ~ run python {コマンド} という形 
 
@@ -124,6 +123,10 @@
 	$ python manage.py startapp {アプリケーション名}
 ```
 
+- <b>静的ファイルの置き場所</b>
+
+	- djangoPJ/static以下にアプリケーション名でディレクトリを切ってその中に配置する
+
 ---
 ### その他注意事項
 
@@ -138,9 +141,7 @@
 
 ### TODO
 
-- Django
-	- DBの確認
-		- Amazon RDSとかと疎通出来るか
+- Amazon RDSと疎通出来るか
 
 ---
 
