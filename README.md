@@ -17,15 +17,15 @@
 
 -----
 
-### 構成
+### 設計
 
 - nginxコンテナ, pythonコンテナ, mysqlコンテナをDocker composeで連携させている 
 
-![コンテナ構成](コンテナ構成.png)
+![コンテナ構成](img/コンテナ構成.png)
 
 - 開発環境構築と本番環境構築を分けて諸々設定ファイルを記述している
 
-![開発と本番](開発と本番.png)
+![開発と本番](img/開発と本番.png)
 
 
 - ※ 本番環境(AWS上)のイメージ
@@ -78,7 +78,7 @@
 ---
 ### Django開発の注意事項
 
-- migrationの仕方
+- <b>migrationの仕方</b>
 
 	- コンテナ内の環境でmigrateを実行するようにする
 		- pythonコンテナに入る or 外からコンテナに対してコマンドを投げる 
@@ -106,6 +106,33 @@
 	$ docker-compose -f docker-compose.yml -f docker-compose.product.yml run python python djangoPJ/manage.py migrate --settings=djangoPJ.settings.product
 
 ``` 
+※ docker-compose ~ run python {コマンド} という形 
+
+
+- <b>アプリケーションの作り方</b>
+
+	- アプリケーションはコンテナ内に入って作成した方が良さげ
+
+```
+	# コンテナに入るパターン
+	
+	# pythonコンテナに入る
+	$ docker exec -i -t {pythonコンテナ名} bash
+	# manege.pyと同階層に移動
+	$ cd djangoPJ
+	# アプリケーション作成
+	$ python manage.py startapp {アプリケーション名}
+```
+
+---
+### その他注意事項
+
+- <b>nginxのコンテナに入る時のコマンド</b>
+
+```
+	$ docker exec -i -t {nginxのコンテナ名} /bin/sh	
+```
+
 
 ---
 
@@ -114,7 +141,6 @@
 - Django
 	- DBの確認
 		- Amazon RDSとかと疎通出来るか
-	- 静的ファイルの確認
 
 ---
 
@@ -136,9 +162,10 @@
 - Django
 	- [EC2でDjangoを動かす](https://qiita.com/kur/items/fb75354ee53671c79614) 
 	- [開発環境と本番環境でsettingを分ける方法](https://qiita.com/okoppe8/items/e60d35f55188c0ab9ecc)
+	- [Djangoで静的ファイルを扱う](http://djandjan.hateblo.jp/entry/2018/03/08/225014) 
 
 - DB
 	- [dockerでdjangoとmysql連携](https://qiita.com/cortyuming/items/e587fc045ee7424466b0) 
 
 - Nginx
-	- [Djangoで静的ファイルを扱う](http://djandjan.hateblo.jp/entry/2018/03/08/225014) 
+	- [静的ファイルを扱うための設定](https://qiita.com/NickelCreate/items/bed3dc9d088b57127ba7)

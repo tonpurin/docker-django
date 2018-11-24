@@ -21,6 +21,8 @@ services:
   # Nginx
   webserver:
     image: nginx:alpine
+    volumes: # 静的ファイル群をマウント
+      - ./../djangoPJ/static:/static
     depends_on: # webserverコンテナを立ち上げる前にpythonコンテナを立ち上げる
     - python
 
