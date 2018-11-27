@@ -167,6 +167,7 @@
 
 - DB
 	- [dockerでdjangoとmysql連携](https://qiita.com/cortyuming/items/e587fc045ee7424466b0) 
+	- [sequel proでdbコンテナ内のmysqlを確認](https://tackeyy.com/blog/posts/docker-with-sequel-pro)
 
 - Nginx
 	- [静的ファイルを扱うための設定](https://qiita.com/NickelCreate/items/bed3dc9d088b57127ba7)
